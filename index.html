@@ -1,194 +1,928 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>廣瀬典男・ふきょの本棚</title>
-
-  <style>
-    body {
-      font-family: "Yu Gothic", "Meiryo", sans-serif;
-      margin: 0;
-      background: #f7f5f0;
-      color: #333;
-      line-height: 1.7;
-    }
-
-    header {
-      background: #ffffff;
-      text-align: center;
-      padding: 45px 20px 35px;
-      border-bottom: 1px solid #ddd;
-    }
-
-    header h1 {
-      margin: 0 0 10px;
-      font-size: 30px;
-    }
-
-    header p {
-      margin: 0;
-      color: #666;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 30px 20px 60px;
-    }
-
-    h2 {
-      border-left: 6px solid #c08a3e;
-      padding-left: 12px;
-      margin-top: 30px;
-    }
-
-    .books {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-    }
-
-    .book {
-      background: #ffffff;
-      border-radius: 10px;
-      padding: 22px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    }
-
-    .book h3 {
-      margin-top: 0;
-      font-size: 19px;
-    }
-
-    .book a {
-      display: inline-block;
-      margin-top: 12px;
-      padding: 9px 16px;
-      background: #c08a3e;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-    }
-
-    .book a:hover {
-      opacity: 0.85;
-    }
-
-    .coming {
-      margin-top: 45px;
-      padding: 25px;
-      background: #ffffff;
-      border-radius: 10px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      color: #777;
-      font-size: 14px;
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>廣瀬典男 Kindle本棚</title>
+<meta name="description" content="廣瀬典男のKindle本を、新刊・健康・仕事・FX・小説・学びのカテゴリーから探せる本棚です。">
+<style>
+:root{--ink:#1f2937;--muted:#6b7280;--paper:#fffdf9;--line:#e5e7eb;--new:#fff1f2;--health:#eef8ee;--work:#eef6ff;--fx:#fff8df;--fiction:#f6f0ff;--learning:#eef8f7}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Yu Gothic UI","Meiryo",sans-serif;background:var(--paper);color:var(--ink);line-height:1.7}.wrap{max-width:1180px;margin:auto;padding:0 22px}.hero{padding:58px 0 30px;text-align:center;background:linear-gradient(180deg,#fff 0%,#fffaf2 100%);border-bottom:1px solid var(--line)}.hero .kicker{font-size:.82rem;letter-spacing:.18em;font-weight:700;color:#8a6a3b}.hero h1{font-size:clamp(2rem,5vw,4rem);margin:.25em 0 .15em}.hero p{margin:0 auto;max-width:760px;color:var(--muted);font-size:1.05rem}.global-nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}.nav-inner{max-width:1180px;margin:auto;padding:10px 18px;display:flex;gap:8px;overflow-x:auto}.nav-inner a{white-space:nowrap;text-decoration:none;color:var(--ink);font-weight:700;padding:9px 14px;border-radius:999px;border:1px solid rgba(0,0,0,.07)}.nav-new{background:var(--new)}.nav-health{background:var(--health)}.nav-work{background:var(--work)}.nav-fx{background:var(--fx)}.nav-fiction{background:var(--fiction)}.nav-learning{background:var(--learning)}.nav-all{background:#f4f4f5}.notice{max-width:1180px;margin:28px auto 0;padding:0 22px}.notice-box{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;color:var(--muted)}section{scroll-margin-top:86px}.new-section,.category{max-width:1180px;margin:34px auto;padding:32px 22px;border-radius:20px}.new-section{background:var(--new)}.category-health{background:var(--health)}.category-work{background:var(--work)}.category-fx{background:var(--fx)}.category-fiction{background:var(--fiction)}.category-learning{background:var(--learning)}.section-heading{display:flex;align-items:end;gap:14px;margin-bottom:20px;flex-wrap:wrap}.section-heading h2{margin:0;font-size:clamp(1.65rem,3vw,2.3rem)}.section-heading .eyebrow{width:100%;margin:0;font-size:.72rem;letter-spacing:.18em;font-weight:800;color:var(--muted)}.section-heading span{margin-left:auto;color:var(--muted);font-weight:700}.book-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}.book-card{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:14px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,.055);display:flex;flex-direction:column}.cover-link{position:relative;display:block;background:#f8fafc;aspect-ratio:2/3;overflow:hidden}.cover-link img{width:100%;height:100%;object-fit:contain;display:block}.badge{position:absolute;left:10px;top:10px;background:#c62828;color:#fff;font-size:.72rem;font-weight:900;padding:5px 9px;border-radius:999px;letter-spacing:.08em}.book-info{padding:14px;display:flex;flex-direction:column;flex:1}.book-info h3{font-size:1rem;line-height:1.45;margin:0 0 8px}.book-info p{font-size:.88rem;color:var(--muted);margin:0 0 14px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}.amazon-btn{margin-top:auto;display:block;text-align:center;text-decoration:none;background:#232f3e;color:#fff;font-weight:800;padding:9px 10px;border-radius:9px}.all-anchor{max-width:1180px;margin:42px auto 0;padding:0 22px;scroll-margin-top:86px}.all-anchor h2{font-size:2rem;margin-bottom:4px}.all-anchor p{color:var(--muted);margin-top:0}.footer{text-align:center;padding:45px 22px 60px;color:var(--muted)}.top-link{display:inline-block;margin-top:10px;color:var(--ink);font-weight:700}.note{font-size:.9rem}.count{font-weight:800;color:var(--ink)}
+@media(max-width:900px){.book-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:650px){.wrap{padding:0 14px}.hero{padding-top:38px}.new-section,.category{margin:22px 10px;padding:24px 14px}.book-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.book-info{padding:11px}.book-info h3{font-size:.93rem}.book-info p{font-size:.82rem}.nav-inner{padding-left:10px}.section-heading span{margin-left:0}}
+</style>
 </head>
-
-<body>
-
-<header>
-  <h1>廣瀬典男・ふきょの本棚</h1>
-  <p>Kindle新刊・おすすめ書籍をまとめています。</p>
+<body id="top">
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">HIROSE NORIO BOOKSHELF</div>
+    <h1>廣瀬典男 Kindle本棚</h1>
+    <p>新刊から過去作品まで、テーマ別にまとめました。気になる表紙や「Amazonで見る」から各書籍ページへ進めます。</p>
+  </div>
 </header>
-
-<div class="container">
-
-  <h2>新刊・おすすめ</h2>
-
-  <div class="books">
-
-    <div class="book">
-      <h3>『売れるKindleは「書く前」に決まる』</h3>
-      <p>需要・競合・自分の経験から「次に書く一冊」を見つけるKindle企画術</p>
-      <a href="https://www.amazon.co.jp/dp/B0HFC81KMH" target="_blank">
-        Amazonで見る
-      </a>
-    </div>
-
-    <div class="book">
-      <h3>『もう遅い。だから、やる。』</h3>
-      <p>何年も眠らせていたKindleを、AIでもう一度動かし始めた</p>
-      <a href="https://www.amazon.co.jp/dp/B0HFNJM4RB" target="_blank">
-        Amazonで見る
-      </a>
-    </div>
-
-    <div class="book">
-      <h3>『降りる勇気』</h3>
-      <p>50代から「会社の評価」ではなく「自分の基準」で働くための人生後半戦略</p>
-      <a href="https://www.amazon.co.jp/dp/B0HG13LHLW" target="_blank">
-        Amazonで見る
-      </a>
-    </div>
-
-    <div class="book">
-      <h3>『いい人なのに、なぜか疲れる』</h3>
-      <p>フレネミーとの違和感に気づき、自分を消耗させない距離の取り方</p>
-      <a href="https://www.amazon.co.jp/dp/B0HG5KJ528" target="_blank">
-        Amazonで見る
-      </a>
-    </div>
-
-    <div class="book">
-      <h3>『食欲と戦わない』</h3>
-      <p>食べたい瞬間の呼吸で、無意識の一口を「自分で選ぶ」に変える方法</p>
-      <a href="https://www.amazon.co.jp/dp/B0HG7Q5463" target="_blank">
-        Amazonで見る
-      </a>
-    </div>
-
-    <div class="book">
-      <h3>『昔のケトは、もう古い』</h3>
-      <p>昔の糖質制限を見直して、今の体に合う痩せ方へ更新する方法</p>
-      <a href="https://www.amazon.co.jp/dp/B0HGXK818Q" target="_blank">
-        Amazonで見る
-      </a>
-    </div>
-
-    <div class="book">
-      <h3>『運動は、始めなくていい』</h3>
-      <a href="https://www.amazon.co.jp/dp/B0HH31XVKN" target="_blank">
-        Amazonで見る
-      </a>
-    </div>
-
-    <div class="book">
-      <h3>『仕事が消える前に、価値が消える』</h3>
-      <a href="https://www.amazon.co.jp/dp/B0HH8X8W5M" target="_blank">
-        Amazonで見る
-      </a>
-    </div>
-
-    <div class="book">
-      <h3>『好奇心に理由はいらない』</h3>
-      <a href="https://www.amazon.co.jp/dp/B0HHFXBWJD" target="_blank">
-        Amazonで見る
-      </a>
-    </div>
-
+<nav class="global-nav" aria-label="本棚メニュー"><div class="nav-inner"><a href="#new" class="nav-new">新刊</a>
+<a href="#health" class="nav-health">健康・暮らし</a>
+<a href="#work" class="nav-work">仕事・副業・AI</a>
+<a href="#fx" class="nav-fx">FX・お金</a>
+<a href="#fiction" class="nav-fiction">小説・ミステリー</a>
+<a href="#learning" class="nav-learning">学び・生き方</a>
+<a href="#all" class="nav-all">全作品</a></div></nav>
+<div class="notice"><div class="notice-box"><span class="count">全67冊</span>を掲載。新刊は上段で紹介し、同じ本を各カテゴリーにも重複掲載しています。今後は新刊欄を最新8冊程度に入れ替えて運用できます。</div></div>
+<section id="new" class="new-section">
+  <div class="section-heading"><p class="eyebrow">NEW BOOKS</p><h2>新刊</h2><span>10冊</span></div>
+  <div class="book-grid"><article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0HFC81KMH" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0HFC81KMH.jpg" alt="『売れるKindleは「書く前」に決まる』 の表紙" loading="lazy">
+    <span class="badge">NEW</span>
+  </a>
+  <div class="book-info">
+    <h3>『売れるKindleは「書く前」に決まる』</h3>
+    <p>需要・競合・自分の経験から「次に書く一冊」を見つけるKindle企画術</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0HFC81KMH" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
   </div>
-
-  <div class="coming">
-    <h2>これから広げていきます</h2>
-    <p>
-      この本棚には、Kindle書籍だけでなく、
-      noteの記事、無料コンテンツ、より深く学びたい方向けのコンテンツなども
-      順次まとめていく予定です。
-    </p>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0HFNJM4RB" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0HFNJM4RB.jpg" alt="もう遅い。だから、やる。 の表紙" loading="lazy">
+    <span class="badge">NEW</span>
+  </a>
+  <div class="book-info">
+    <h3>もう遅い。だから、やる。</h3>
+    <p>何年も眠らせていたKindleを、AIでもう一度動かし始めた</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0HFNJM4RB" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
   </div>
-
-</div>
-
-<footer>
-  © 廣瀬典男・ふきょ
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0HG13LHLW" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0HG13LHLW.png" alt="『降りる勇気』 の表紙" loading="lazy">
+    <span class="badge">NEW</span>
+  </a>
+  <div class="book-info">
+    <h3>『降りる勇気』</h3>
+    <p>50代から「会社の評価」ではなく「自分の基準」で働くための人生後半戦略</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0HG13LHLW" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0HG5KJ528" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0HG5KJ528.png" alt="『いい人なのに、なぜか疲れる』 の表紙" loading="lazy">
+    <span class="badge">NEW</span>
+  </a>
+  <div class="book-info">
+    <h3>『いい人なのに、なぜか疲れる』</h3>
+    <p>フレネミーとの違和感に気づき、自分を消耗させない距離の取り方</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0HG5KJ528" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0HG7Q5463" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0HG7Q5463.png" alt="『食欲と戦わない』 の表紙" loading="lazy">
+    <span class="badge">NEW</span>
+  </a>
+  <div class="book-info">
+    <h3>『食欲と戦わない』</h3>
+    <p>食べたい瞬間の呼吸で、無意識の一口を「自分で選ぶ」に変える方法</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0HG7Q5463" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0HGXK818Q" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0HGXK818Q.png" alt="『昔のケトは、もう古い』 の表紙" loading="lazy">
+    <span class="badge">NEW</span>
+  </a>
+  <div class="book-info">
+    <h3>『昔のケトは、もう古い』</h3>
+    <p>昔の糖質制限を見直して、今の体に合う痩せ方へ更新する方法</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0HGXK818Q" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0HH31XVKN" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0HH31XVKN.png" alt="運動は、始めなくていい。 の表紙" loading="lazy">
+    <span class="badge">NEW</span>
+  </a>
+  <div class="book-info">
+    <h3>運動は、始めなくていい。</h3>
+    <p>スクワット不要。「立つ・座る・歩く」を運動に変える、運動時間ゼロの足腰習慣</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0HH31XVKN" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0HH8X8W5M" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0HH8X8W5M.png" alt="仕事が消える前に、価値が消える の表紙" loading="lazy">
+    <span class="badge">NEW</span>
+  </a>
+  <div class="book-info">
+    <h3>仕事が消える前に、価値が消える</h3>
+    <p>AIで安くなる仕事、これからも評価される仕事の見分け方</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0HH8X8W5M" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0HHFXBWJD" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0HHFXBWJD.png" alt="『好奇心に理由はいらない』 の表紙" loading="lazy">
+    <span class="badge">NEW</span>
+  </a>
+  <div class="book-info">
+    <h3>『好奇心に理由はいらない』</h3>
+    <p>「何の役に立つの？」を手放すと、大人の学びはもっと自由になる</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0HHFXBWJD" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0HDGVLTYB" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0HDGVLTYB.png" alt="Kindle無料キャンペーンで埋もれた本を蘇らせる の表紙" loading="lazy">
+    <span class="badge">NEW</span>
+  </a>
+  <div class="book-info">
+    <h3>Kindle無料キャンペーンで埋もれた本を蘇らせる</h3>
+    <p>出版後に動かなくなった過去作品を、もう一度読者へ届ける販売促進術</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0HDGVLTYB" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article></div>
+</section>
+<div id="all" class="all-anchor"><h2>全作品</h2><p>ここから下は、すべての本を大きなカテゴリー別にまとめています。</p></div>
+<section id="health" class="category category-health">
+  <div class="section-heading">
+    <p class="eyebrow">CATEGORY</p>
+    <h2>健康・暮らし</h2>
+    <span>36冊</span>
+  </div>
+  <div class="book-grid">
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0HG7Q5463" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0HG7Q5463.png" alt="『食欲と戦わない』 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>『食欲と戦わない』</h3>
+    <p>食べたい瞬間の呼吸で、無意識の一口を「自分で選ぶ」に変える方法</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0HG7Q5463" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0HGXK818Q" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0HGXK818Q.png" alt="『昔のケトは、もう古い』 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>『昔のケトは、もう古い』</h3>
+    <p>昔の糖質制限を見直して、今の体に合う痩せ方へ更新する方法</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0HGXK818Q" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0HH31XVKN" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0HH31XVKN.png" alt="運動は、始めなくていい。 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>運動は、始めなくていい。</h3>
+    <p>スクワット不要。「立つ・座る・歩く」を運動に変える、運動時間ゼロの足腰習慣</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0HH31XVKN" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0F24V8W7M" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0F24V8W7M.png" alt="自宅でできる“水の革命” の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>自宅でできる“水の革命”</h3>
+    <p>天然石を使ったナチュラルウォーター生活</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0F24V8W7M" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0F1G4WLNS" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0F1G4WLNS.png" alt="「お金をかけずに健康を手に入れる！毎日飲みたい湧き水の秘密」 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>「お金をかけずに健康を手に入れる！毎日飲みたい湧き水の秘密」</h3>
+    <p>表紙をクリックするとAmazonの商品ページを開きます。</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0F1G4WLNS" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0DZPH8C49" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0DZPH8C49.png" alt="忙しくてもできる「簡単ストレス解消法」 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>忙しくてもできる「簡単ストレス解消法」</h3>
+    <p>1日5分で心をリセットする習慣</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0DZPH8C49" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0F3X1JM7V" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0F3X1JM7V.png" alt="1日1杯で若返る！奇跡の湧き水を作る天然石 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>1日1杯で若返る！奇跡の湧き水を作る天然石</h3>
+    <p>温泉水のエネルギーを手に入れる方法</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0F3X1JM7V" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0F3FDVNMF" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0F3FDVNMF.png" alt="健康寿命を10年延ばすヒント の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>健康寿命を10年延ばすヒント</h3>
+    <p>納豆に入れて血液サラサラ、腎臓も糖も丸ごと対策！</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0F3FDVNMF" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0F3KMLYJL" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0F3KMLYJL.png" alt="整わない体：自然を手放した代償 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>整わない体：自然を手放した代償</h3>
+    <p>天然石と水が導く浄化と健康</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0F3KMLYJL" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0F2SNS3HN" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0F2SNS3HN.png" alt="腎臓リセット！1日5gの回復法 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>腎臓リセット！1日5gの回復法</h3>
+    <p>むくみ・疲れ・数値が変わる、“魔法の粉”と自然フード習慣</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0F2SNS3HN" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0F36DGTM1" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0F36DGTM1.png" alt="整う暮らしは、石と水から。 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>整う暮らしは、石と水から。</h3>
+    <p>天然石で始める、やさしいデトックス生活</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0F36DGTM1" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0F2GM5XFY" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0F2GM5XFY.png" alt="毎朝スッキリ起きられる体になる の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>毎朝スッキリ起きられる体になる</h3>
+    <p>科学で整える、睡眠・自律神経・腸内環境の習慣術</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0F2GM5XFY" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0F326XFXZ" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0F326XFXZ.png" alt="調子がいい人は、科学で整えている の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>調子がいい人は、科学で整えている</h3>
+    <p>医者よりも、先に試してほしい。体と心の自己メンテ術</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0F326XFXZ" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0F31G6776" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0F31G6776.png" alt="進化的に正しい生活 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>進化的に正しい生活</h3>
+    <p>不調は、あなたの体が“進化からズレてる”サインです。</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0F31G6776" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0F2SCS5HR" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0F2SCS5HR.png" alt="不調の正体 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>不調の正体</h3>
+    <p>僕たちが疲れを手放せない理由と、整える習慣</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0F2SCS5HR" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0DCG6W3CC" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0DCG6W3CC.png" alt="自宅でできる“水の革命”2 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>自宅でできる“水の革命”2</h3>
+    <p>たった一つの天然石で、水も生活も整う理由</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0DCG6W3CC" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0F2FPTB45" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0F2FPTB45.png" alt="その疲れ、文明病です の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>その疲れ、文明病です</h3>
+    <p>文明病を改善する7つの習慣</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0F2FPTB45" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0F28PWRFJ" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0F28PWRFJ.png" alt="「邪気退散！浄化の湧き水と天然石の力」 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>「邪気退散！浄化の湧き水と天然石の力」</h3>
+    <p>「負のエネルギーを祓い、運気と繁栄を呼び込むシンプルな法則」</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0F28PWRFJ" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0F27WJB3R" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0F27WJB3R.png" alt="成功は「水」と「石」がつくる の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>成功は「水」と「石」がつくる</h3>
+    <p>湧き水と天然石が導く、仕事と人生の整え方</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0F27WJB3R" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0F26QZMWN" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0F26QZMWN.png" alt="蘇るエネルギー水 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>蘇るエネルギー水</h3>
+    <p>天然石がつくる、体が目覚める“温泉水”習慣</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0F26QZMWN" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0F25S6G3J" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0F25S6G3J.png" alt="「湧き水が呼ぶ、金運と豊かさ」 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>「湧き水が呼ぶ、金運と豊かさ」</h3>
+    <p>奇跡の天然石が教えてくれた、運気を高める習慣</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0F25S6G3J" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0F1TXK6MY" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0F1TXK6MY.png" alt="人間関係が劇的に変わる！湧き水のある生活の魅力 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>人間関係が劇的に変わる！湧き水のある生活の魅力</h3>
+    <p>表紙をクリックするとAmazonの商品ページを開きます。</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0F1TXK6MY" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0F233F7K3" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0F233F7K3.png" alt="1日1杯で若返る！奇跡の湧き水を作る天然石 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>1日1杯で若返る！奇跡の湧き水を作る天然石</h3>
+    <p>温泉水のエネルギーを手に入れる方法</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0F233F7K3" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0F22LX1XW" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0F22LX1XW.png" alt="「一生お金が巡る！奇跡の湧き水を作る天然石」 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>「一生お金が巡る！奇跡の湧き水を作る天然石」</h3>
+    <p>「99%の人が知らない3つの秘密</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0F22LX1XW" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0F1NJNTTJ" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0F1NJNTTJ.png" alt="不調の9割は水で解決！湧き水の驚きの効果 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>不調の9割は水で解決！湧き水の驚きの効果</h3>
+    <p>水道水を湧き水に変えるだけ！家庭でできる究極の健康法</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0F1NJNTTJ" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0F1MC5L43" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0F1MC5L43.png" alt="疲れ知らず！若返る湧き水の飲み方 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>疲れ知らず！若返る湧き水の飲み方</h3>
+    <p>たった1杯で変わる！体が目覚める飲み方</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0F1MC5L43" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0F1KBN91H" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0F1KBN91H.png" alt="「人間関係のストレスを浄化する！湧き水リフレッシュ法」 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>「人間関係のストレスを浄化する！湧き水リフレッシュ法」</h3>
+    <p>職場・家庭・友人関係がスムーズになる浄化メソッド</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0F1KBN91H" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0F1HQW8ZV" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0F1HQW8ZV.png" alt="集中力を高める湧き水の飲み方」 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>集中力を高める湧き水の飲み方」</h3>
+    <p>「仕事の効率が劇的にアップする！脳を活性化する最強の水習慣</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0F1HQW8ZV" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0F1B6T849" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0F1B6T849.png" alt="「ストレスフリーで出版！電子書籍をラクに書くための健康習慣」 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>「ストレスフリーで出版！電子書籍をラクに書くための健康習慣」</h3>
+    <p>表紙をクリックするとAmazonの商品ページを開きます。</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0F1B6T849" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0F19H6LVR" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0F19H6LVR.png" alt="ファスティング（断食）で健康的に痩せる の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>ファスティング（断食）で健康的に痩せる</h3>
+    <p>「3日で変わる！痩せる＆整うファスティング入門」</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0F19H6LVR" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0F1BRZVGC" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0F1BRZVGC.png" alt="営業マン必見！信頼度が上がる薄毛対策と第一印象の作り方 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>営業マン必見！信頼度が上がる薄毛対策と第一印象の作り方</h3>
+    <p>髪の印象が成約率を左右する？ビジネス成功のための 身だしなみ戦略</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0F1BRZVGC" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0F195GGPV" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0F195GGPV.png" alt="睡眠の質を劇的に向上させる方法 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>睡眠の質を劇的に向上させる方法</h3>
+    <p>「たった数分で熟睡へ！最高の眠りを手に入れる習慣」</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0F195GGPV" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0F14BRW1F" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0F14BRW1F.png" alt="老けない体を作る「アンチエイジング習慣」 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>老けない体を作る「アンチエイジング習慣」</h3>
+    <p>「若さを保つ！食事・運動・睡眠で老化を遅らせる最強メソッド」</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0F14BRW1F" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0F13CNTNY" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0F13CNTNY.png" alt="髪の毛を増やす食事と生活習慣 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>髪の毛を増やす食事と生活習慣</h3>
+    <p>「薄毛・抜け毛を防ぐ！食事と習慣で髪を太く強く育てる方法」</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0F13CNTNY" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0F13H7CRZ" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0F13H7CRZ.png" alt="短期間で体を鍛える「自重トレーニング」 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>短期間で体を鍛える「自重トレーニング」</h3>
+    <p>「1日15分！器具なしで理想の体を作る最強メソッド」」</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0F13H7CRZ" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0C64VG1Y9" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0C64VG1Y9.png" alt="包茎イージーチェンジ たった10日で感動の改善実感！ の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>包茎イージーチェンジ たった10日で感動の改善実感！</h3>
+    <p>自信と自尊心を取り戻す、包茎改善の秘訣</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0C64VG1Y9" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+  </div>
+</section><section id="work" class="category category-work">
+  <div class="section-heading">
+    <p class="eyebrow">CATEGORY</p>
+    <h2>仕事・副業・AI</h2>
+    <span>8冊</span>
+  </div>
+  <div class="book-grid">
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0HFC81KMH" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0HFC81KMH.jpg" alt="『売れるKindleは「書く前」に決まる』 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>『売れるKindleは「書く前」に決まる』</h3>
+    <p>需要・競合・自分の経験から「次に書く一冊」を見つけるKindle企画術</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0HFC81KMH" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0HFNJM4RB" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0HFNJM4RB.jpg" alt="もう遅い。だから、やる。 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>もう遅い。だから、やる。</h3>
+    <p>何年も眠らせていたKindleを、AIでもう一度動かし始めた</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0HFNJM4RB" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0HH8X8W5M" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0HH8X8W5M.png" alt="仕事が消える前に、価値が消える の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>仕事が消える前に、価値が消える</h3>
+    <p>AIで安くなる仕事、これからも評価される仕事の見分け方</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0HH8X8W5M" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0HDGVLTYB" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0HDGVLTYB.png" alt="Kindle無料キャンペーンで埋もれた本を蘇らせる の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>Kindle無料キャンペーンで埋もれた本を蘇らせる</h3>
+    <p>出版後に動かなくなった過去作品を、もう一度読者へ届ける販売促進術</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0HDGVLTYB" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0F1NJ1TNP" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0F1NJ1TNP.png" alt="「副業で稼げる！湧き水ビジネスの成功法則」 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>「副業で稼げる！湧き水ビジネスの成功法則」</h3>
+    <p>副業初心者必見！湧き水で収益を生む具体的ステップ</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0F1NJ1TNP" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0F1L2VWXS" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0F1L2VWXS.png" alt="無料で手に入る湧き水を活用したビジネスとは の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>無料で手に入る湧き水を活用したビジネスとは</h3>
+    <p>〜ゼロコストで実現！湧き水〜</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0F1L2VWXS" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0DVQ5JB9Q" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0DVQ5JB9Q.png" alt="人生100歳時代の副業革命 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>人生100歳時代の副業革命</h3>
+    <p>Kindle出版を活用して自由な働き方を実現する方法</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0DVQ5JB9Q" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0C8RNXJY9" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0C8RNXJY9.jpg" alt="ひとりビジネス起業家のオンライン化と無料集客：お金と自由を手に入れる1年目の成功法則 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>ひとりビジネス起業家のオンライン化と無料集客：お金と自由を手に入れる1年目の成功法則</h3>
+    <p>驚きの無料集客術！ひとり起業家がオンラインで成功する秘密のレシピ」</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0C8RNXJY9" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+  </div>
+</section><section id="fx" class="category category-fx">
+  <div class="section-heading">
+    <p class="eyebrow">CATEGORY</p>
+    <h2>FX・お金</h2>
+    <span>6冊</span>
+  </div>
+  <div class="book-grid">
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0DZV9D1Q2" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0DZV9D1Q2.png" alt="FX初心者が勝ち続けるための心理戦略 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>FX初心者が勝ち続けるための心理戦略</h3>
+    <p>欲望と恐怖を克服し、冷静に利益を積み上げる方法</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0DZV9D1Q2" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0DZJ5M9BJ" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0DZJ5M9BJ.png" alt="初心者でも勝てる！FXチャート分析大全 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>初心者でも勝てる！FXチャート分析大全</h3>
+    <p>シンプルで実践的なチャート分析の基本と勝つための戦略</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0DZJ5M9BJ" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0DZF7N1V1" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0DZF7N1V1.png" alt="『副業FXで月5万円！初心者でも勝てるシンプルトレード術』 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>『副業FXで月5万円！初心者でも勝てるシンプルトレード術』</h3>
+    <p>少額・短時間・低リスクでコツコツ稼ぐFX副業の実践ガイド</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0DZF7N1V1" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0DZTYDJ1N" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0DZTYDJ1N.png" alt="FXで月収10万円を狙う！スキマ時間トレード術 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>FXで月収10万円を狙う！スキマ時間トレード術</h3>
+    <p>1日30分でできる！短時間トレードの成功法則</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0DZTYDJ1N" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0DX5WXBPL" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0DX5WXBPL.png" alt="「FXで勝てない理由と負け組がやらかす5つのミス」 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>「FXで勝てない理由と負け組がやらかす5つのミス」</h3>
+    <p>「あなたが気づいていない”致命的な間違い”を徹底解説」 FX敗者復活戦 人生逆転プロジェクト vol.Ⅱ</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0DX5WXBPL" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0DWS2R5RG" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0DWS2R5RG.png" alt="「FXで会社を辞めるな！9割が失敗する脱サラの現実」 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>「FXで会社を辞めるな！9割が失敗する脱サラの現実」</h3>
+    <p>「会社を辞める前に知るべき5つの真実と生き残るための戦略」 「FX敗者復活戦 人生逆転プロジェクト」</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0DWS2R5RG" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+  </div>
+</section><section id="fiction" class="category category-fiction">
+  <div class="section-heading">
+    <p class="eyebrow">CATEGORY</p>
+    <h2>小説・ミステリー</h2>
+    <span>11冊</span>
+  </div>
+  <div class="book-grid">
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0DYVQYRWN" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0DYVQYRWN.png" alt="雪に閉ざされたペンションの真実 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>雪に閉ざされたペンションの真実</h3>
+    <p>密室で繰り返される連続殺人の謎</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0DYVQYRWN" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0DVGS2SSG" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0DVGS2SSG.jpg" alt="「静寂の町に眠る真実」 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>「静寂の町に眠る真実」</h3>
+    <p>会津若松で起きた一つの悲劇</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0DVGS2SSG" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0DZ7734BP" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0DZ7734BP.png" alt="夕陽の橋、消えた足取り の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>夕陽の橋、消えた足取り</h3>
+    <p>大学研究室の闇とブラックリストの実験台</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0DZ7734BP" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0DYZ15YLY" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0DYZ15YLY.png" alt="密室の滑稽譚 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>密室の滑稽譚</h3>
+    <p>完璧なトリックと歪んだ復讐劇</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0DYZ15YLY" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0DZ537133" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0DZ537133.png" alt="虚ろなる花園の住人 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>虚ろなる花園の住人</h3>
+    <p>語れない証人と、毒が香るバラの秘密</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0DZ537133" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0DYZ1JWRG" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0DYZ1JWRG.png" alt="赤い月夜の推理劇 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>赤い月夜の推理劇</h3>
+    <p>あの日の放火犯と人形劇団の愛憎模様</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0DYZ1JWRG" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0DYSCHFH8" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0DYSCHFH8.png" alt="黄昏に沈む教会 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>黄昏に沈む教会</h3>
+    <p>神父の告白と隠された聖具の秘密</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0DYSCHFH8" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0DYJYTDVY" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0DYJYTDVY.png" alt="冬の街に佇む幻影 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>冬の街に佇む幻影</h3>
+    <p>連続毒殺事件と七つの奇妙な痕跡</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0DYJYTDVY" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0DY683F83" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0DY683F83.png" alt="闇に囁く足音 ～少女失踪と廃工場のミステリー～ の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>闇に囁く足音 ～少女失踪と廃工場のミステリー～</h3>
+    <p>深夜に響く歌声が暴く10年前の闇</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0DY683F83" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0DYF9CJZ2" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0DYF9CJZ2.png" alt="君影町の迷い鴉 ～放火が暴く沈黙の闇～ の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>君影町の迷い鴉 ～放火が暴く沈黙の闇～</h3>
+    <p>連続放火が暴く、消えた住人と町の沈黙</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0DYF9CJZ2" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0DV3M9DYS" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0DV3M9DYS.png" alt="氷底の旋律 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>氷底の旋律</h3>
+    <p>氷結の湖に消えたピアニストの秘密</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0DV3M9DYS" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+  </div>
+</section><section id="learning" class="category category-learning">
+  <div class="section-heading">
+    <p class="eyebrow">CATEGORY</p>
+    <h2>学び・生き方</h2>
+    <span>6冊</span>
+  </div>
+  <div class="book-grid">
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0HG13LHLW" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0HG13LHLW.png" alt="『降りる勇気』 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>『降りる勇気』</h3>
+    <p>50代から「会社の評価」ではなく「自分の基準」で働くための人生後半戦略</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0HG13LHLW" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0HG5KJ528" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0HG5KJ528.png" alt="『いい人なのに、なぜか疲れる』 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>『いい人なのに、なぜか疲れる』</h3>
+    <p>フレネミーとの違和感に気づき、自分を消耗させない距離の取り方</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0HG5KJ528" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0HHFXBWJD" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0HHFXBWJD.png" alt="『好奇心に理由はいらない』 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>『好奇心に理由はいらない』</h3>
+    <p>「何の役に立つの？」を手放すと、大人の学びはもっと自由になる</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0HHFXBWJD" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B098KC5YYG" target="_blank" rel="noopener noreferrer">
+    <img src="images/B098KC5YYG.png" alt="【読書技法】一文読みで忘れない読書術 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>【読書技法】一文読みで忘れない読書術</h3>
+    <p>Audibleの併用で不労所得と長期安定収入を構築するための未来に生きる 読書案内：起業、副業、ブランディングにも最適の読書技法。</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B098KC5YYG" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0F3NYFBF3" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0F3NYFBF3.png" alt="無限の瞑想法 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>無限の瞑想法</h3>
+    <p>色と意識で整える心と体のセルフヒーリング</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0F3NYFBF3" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+<article class="book-card">
+  <a class="cover-link" href="https://www.amazon.co.jp/dp/B0DZWJ966W" target="_blank" rel="noopener noreferrer">
+    <img src="images/B0DZWJ966W.png" alt="日本史のウラ側 教科書に載らないもう一つの真実 の表紙" loading="lazy">
+    
+  </a>
+  <div class="book-info">
+    <h3>日本史のウラ側 教科書に載らないもう一つの真実</h3>
+    <p>歴史の表と裏、あなたはどちらを信じる?</p>
+    <a class="amazon-btn" href="https://www.amazon.co.jp/dp/B0DZWJ966W" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </div>
+</article>
+  </div>
+</section>
+<footer class="footer">
+  <p>廣瀬典男 Kindle本棚</p>
+  <p class="note">新刊追加時は、該当する本のデータと画像を追加するだけで更新できます。</p>
+  <a class="top-link" href="#top">↑ ページ上部へ戻る</a>
 </footer>
-
 </body>
 </html>
