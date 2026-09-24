@@ -11,6 +11,23 @@
 @media(max-width:900px){.book-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:650px){.wrap{padding:0 14px}.hero{padding-top:38px}.new-section,.category{margin:22px 10px;padding:24px 14px}.book-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.book-info{padding:11px}.book-info h3{font-size:.93rem}.book-info p{font-size:.82rem}.nav-inner{padding-left:10px}.section-heading span{margin-left:0}}
 </style>
 </head>
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const books = new Set();
+
+  document.querySelectorAll('.book-card a[href*="amazon.co.jp/dp/"]').forEach(function(link) {
+    const match = link.href.match(/\/dp\/([A-Z0-9]{10})/);
+    if (match) {
+      books.add(match[1]);
+    }
+  });
+
+  const counter = document.getElementById("book-count");
+  if (counter) {
+    counter.textContent = "全" + books.size + "冊";
+  }
+});
+</script>
 <body id="top">
 <header class="hero">
   <div class="wrap">
@@ -26,7 +43,7 @@
 <a href="#fiction" class="nav-fiction">小説・ミステリー</a>
 <a href="#learning" class="nav-learning">学び・生き方</a>
 <a href="#all" class="nav-all">全作品</a></div></nav>
-<div class="notice"><div class="notice-box"><span class="count">全68冊</span>を掲載。新刊は上段で紹介し、同じ本を各カテゴリーにも重複掲載しています。新刊欄は最新16冊を掲載し、それ以前の作品は各カテゴリーでご覧いただけます。</div></div>
+<div class="notice"><div class="notice-box"><span class="count" id="book-count">全68冊</span>を掲載。新刊は上段で紹介し、同じ本を各カテゴリーにも重複掲載しています。新刊欄は最新16冊を掲載し、それ以前の作品は各カテゴリーでご覧いただけます。</div></div>
 <section id="new" class="new-section">
   <div class="section-heading"><p class="eyebrow">NEW BOOKS</p><h2>新刊</h2><span>16冊</span></div>
 <div class="book-grid"><article class="book-card">
